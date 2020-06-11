@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>OCR Texte Recogniation with tesseract.js</title>
+</head>
+
+<body>
+    <div class="languages">
+        <label for="lang-select">Choose a language</label>
+        <select id="lang-select" name="lang-select">
+            <option value='eng' selected> English </option>
+            <option value='fra'> French </option>
+            <option value='ara'> Arabic </option>
+        </select>
+    </div>
+
+
+    <div class="sample">
+        <button class="sample-btn">Try with this Sample Image</button>
+        <img src="./img/eng_bw.png" alt="" width="300" height="300">
+    </div>
+
+    <div class="file-upload">
+        <input type="file" id="upload-img" name="upload-img" onchange="recognizeFile(window.lastFile=this.files[0])">
+        <label for="upload-img">Upload an Image ...</label>
+    </div>
+
+    <div id="log"></div>
+
+    <script src='https://unpkg.com/tesseract.js@2.0.2/dist/tesseract.min.js'></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
